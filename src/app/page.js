@@ -1,12 +1,31 @@
-import Hero from "@/components/sections/Hero";
-import React from "react";
+"use client";
 
-const page = () => {
+import { useState } from "react";
+
+import About from "@/components/sections/About";
+import Contact from "@/components/sections/Contact";
+import Hero from "@/components/sections/Hero";
+import Projects from "@/components/sections/Projects";
+import Skills from "@/components/sections/Skills";
+
+import Loader from "@/components/layout/Loader";
+
+const Page = () => {
+  const [loading, setLoading] = useState(true);
+
   return (
-    <main>
-      <Hero />
-    </main>
+    <>
+      {loading && <Loader setLoading={setLoading} />}
+
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
+    </>
   );
 };
 
-export default page;
+export default Page;
