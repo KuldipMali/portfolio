@@ -19,7 +19,7 @@ export const heroAnimation = (scope) => {
       {
         y: 40,
         opacity: 0,
-        delay:2,
+        delay: 2,
         duration: 0.6,
       },
       "-=1.2",
@@ -50,15 +50,6 @@ export const heroAnimation = (scope) => {
         duration: 0.6,
       },
       "-=0.4",
-    )
-    .from(
-      q(".hero-image"),
-      {
-        y: 80,
-        opacity: 0,
-        duration: 1,
-      },
-      "-=0.7",
     )
     .from(
       q(".hero-scroll"),
