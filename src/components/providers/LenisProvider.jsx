@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import Lenis from "lenis";
-import { gsap } from "@/libs/gsap";
 
 const LenisProvider = ({ children }) => {
   useEffect(() => {
@@ -11,21 +10,23 @@ const LenisProvider = ({ children }) => {
       smoothWheel: true,
       wheelMultiplier: 1,
       touchMultiplier: 2,
-      infinite: false,
     });
 
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
-    // Make Lenis available globally if needed
     window.lenis = lenis;
 
+    let rafId;
+
+    const raf = (time) => {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    };
+
+    rafId = requestAnimationFrame(raf);
+
     return () => {
+      cancelAnimationFrame(rafId);
       lenis.destroy();
+      delete window.lenis;
     };
   }, []);
 

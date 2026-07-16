@@ -6,10 +6,19 @@ import { useEffect } from "react";
 
 const Loader = ({ setLoading }) => {
   useEffect(() => {
+    // Disable browser scrolling
     document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+
+    // Stop Lenis
+    window.lenis?.stop();
 
     return () => {
       document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+
+      // Restart Lenis
+      window.lenis?.start();
     };
   }, []);
 

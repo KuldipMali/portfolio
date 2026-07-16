@@ -21,6 +21,7 @@ const Page = () => {
       <main>
         <Hero />
         <About />
+        <Marquee/>
         <Skills />
         <Projects />
         <Contact />

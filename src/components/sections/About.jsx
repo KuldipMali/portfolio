@@ -54,10 +54,10 @@ const About = () => {
   return (
     <section 
     ref={sectionRef}
-    id="about" className="bg-background py-32 text-foreground">
+    id="about" className="bg-background py-20 text-foreground">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         {/* Heading */}
-        <div className="mb-24">
+        <div className="mb-15">
           <p
           ref={headingRef} className="about-t text-xs uppercase tracking-[0.3rem] text-(--primary)">
             ABOUT ME
@@ -76,8 +76,8 @@ const About = () => {
         {/* About */}
         <div className="grid gap-16 lg:grid-cols-2">
           {/* Left */}
-          <div ref={leftRef} className="space-y-8">
-            <p className="text-lg leading-9 text-gray-400">
+          <div ref={leftRef} className="space-y-5">
+            <p className="text-lg leading-8 text-gray-400">
               I'm{" "}
               <span className="font-semibold uppercase text-(--primary)">
                 Kuldip Mali
